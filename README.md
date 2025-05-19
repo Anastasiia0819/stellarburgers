@@ -16,33 +16,34 @@
 - `pytest-html` — для генерации HTML-отчета
 
 ## Структура проекта
+```bash
 project/
 │
 ├── tests/
-│   ├── api/                # Тесты API
+│   ├── api/                       # Тесты API
 │   │   ├── test_auth.py
 │   │   ├── test_orders.py
 │   │   └── ...
 │   │
-│   └── ui/                 # Тесты UI (Selenium / Playwright)
+│   └── ui/                        # Тесты UI (Selenium / Playwright)
 │       ├── test_login.py
 │       ├── test_order_flow.py
 │       └── ...
 │
-├── pages/                  # Page Object Model для UI
+├── pages/                         # Page Object Model для UI
 │   ├── login_page.py
 │   ├── order_page.py
 │   └── ...
 │
-├── data/                   # Тестовые данные, фикстуры
+├── data/                          # Тестовые данные, фикстуры
 │   └── users.py
 │
-├── utils/                  # Вспомогательные модули
-│   ├── api_client.py       # Клиент для API-запросов
-│   ├── browser_utils.py    # Браузерные утилиты
+├── utils/                         # Вспомогательные модули
+│   ├── api_client.py              # Клиент для API-запросов
+│   ├── browser_utils.py           # Браузерные утилиты
 │   └── ...
 │
-├── conftest.py             # Общие фикстуры для pytest
+├── conftest.py                    # Общие фикстуры для pytest
 ├── requirements.txt
 └── README.md
 
