@@ -17,35 +17,43 @@
 
 ## Структура проекта
 ```bash
-project/
+├── config/                  # Конфигурационные файлы
+│   └── config.py            # Общие настройки (URLs, токены и т.д.)
 │
-├── tests/
-│   ├── api/                       # Тесты API
-│   │   ├── test_auth.py
-│   │   ├── test_orders.py
-│   │   └── ...
+├── locators/                # Локаторы для UI тестов
+│   ├── __init__.py
+│   ├── login_page.py        # Локаторы для страницы логина
+│   └── registration_page.py # Локаторы для страницы регистрации
+│
+├── pages/                   # Страницы для UI тестов (Page Object Model)
+│   ├── __init__.py
+│   ├── login_page.py        # Класс страницы для логина
+│   └── registration_page.py # Класс страницы для регистрации
+│
+├── tests/                   # Директория для тестов
+│   ├── ui/                  # UI тесты (Selenium или Playwright)
+│   │   ├── __init__.py
+│   │   ├── test_login.py    # Пример UI теста для логина
+│   │   └── test_registration.py # Пример UI теста для регистрации
 │   │
-│   └── ui/                        # Тесты UI (Selenium / Playwright)
-│       ├── test_login.py
-│       ├── test_order_flow.py
-│       └── ...
+│   ├── api/                 # API тесты (requests или Playwright)
+│   │   ├── __init__.py
+│   │   ├── test_user.py     # Пример API теста для пользователя
+│   │   └── test_product.py  # Пример API теста для продукта
+│   │
+│   └── test_all.py          # Главный файл для запуска всех тестов
 │
-├── pages/                         # Page Object Model для UI
-│   ├── login_page.py
-│   ├── order_page.py
-│   └── ...
+├── utils/                   # Утилиты для тестов
+│   ├── __init__.py
+│   ├── api_helper.py        # Вспомогательные функции для API тестов
+│   └── ui_helper.py         # Вспомогательные функции для UI тестов
 │
-├── data/                          # Тестовые данные, фикстуры
-│   └── users.py
+├── reports/                 # Папка для отчетов
+│   └── allure-results/      # Результаты для Allure
 │
-├── utils/                         # Вспомогательные модули
-│   ├── api_client.py              # Клиент для API-запросов
-│   ├── browser_utils.py           # Браузерные утилиты
-│   └── ...
-│
-├── conftest.py                    # Общие фикстуры для pytest
-├── requirements.txt
-└── README.md
+├── requirements.txt         # Файл с зависимостями
+├── pytest.ini               # Конфигурация для pytest
+└── README.md                # Документация по проекту
 
 ## Установка зависимостей
 pip install -r requirements.txt
